@@ -1,12 +1,3 @@
-#score {
-text-decoration: none;
-color: black;
+.hideden {
+display: none;
 
-}
-
-.wrapper {
-    height: 100%;
-    padding-left: 40px;
-    padding-top: 30px;
-    
-}

@@ -1,13 +1,13 @@
 var scoreEl = document.querySelector("#score");
 var timerEl = document.querySelector("#timer");
-var directionEl = document.querySelector(".quiz-direction");
-var quizEl = document.querySelector(".quiz");
-var startButton = document.querySelector(".start-button");
+var directionEl = document.querySelector("#quizDirection");
+var quizEl = document.querySelector("#quiz");
+var startButton = document.querySelector("start-button");
 
-var resultsContainer = document.querySelector(".results");
+var resultsContainer = document.querySelector(".highscore");
 
 //My timer ----- start on button "Start" click
-// after click- hide button and direction
+// after click- hide button and direction to start quizz
 
 startButton.addEventListener("click", setTime);
     var timeLeft = 10;
@@ -23,8 +23,8 @@ startButton.addEventListener("click", setTime);
         }, 1000);
     }
 
-//Sample Quiz Questions - should appear after button start quiz click.
-//multiple choice need to have event listener
+//Need to start after button click
+//add event listener?? Toggle??
 
 quizEl = [
     {
@@ -60,3 +60,21 @@ quizEl = [
     */
 
   ];
+
+    //Sample Quiz Questions - should appear after button start quiz click.
+    //multiple choice need to have event listener
+    document.getElementById("startButton")
+            .addEventListener("click", function() {
+    document.getElementById("quizEl").hidden = true;
+    document.getElementById("quizEl").hidden = false;
+    }, false);
+
+
+  //recording score
+  localStorage.setItem('score', 'highscore');
+
+  //retirieve score and post to Highscore
+  let scoreHistory = localStorage.getItem('highscore');
+
+  //clear score
+  localStorage.clear()
