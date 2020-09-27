@@ -1,10 +1,13 @@
-var scoreEl = document.querySelector("#score");
 var timerEl = document.querySelector("#timer");
-var directionEl = document.querySelector("#quizDirection");
-var quizEl = document.querySelector("#quiz");
-var startButton = document.querySelector("start-button");
+var defaultEl = document.querySelector("#default");
 
-var resultsContainer = document.querySelector(".highscore");
+var startButton = document.querySelector(".start-button");
+
+var quizEl = document.querySelector("#quizContainer");
+var resultMessage = document.querySelector("#resultMsg");
+
+var highscoreEl = document.querySelector("#highScores");
+var highscoreEl = document.querySelector("#saveScores");
 
 //My timer ----- start on button "Start" click
 // after click- hide button and direction to start quizz
@@ -14,39 +17,48 @@ startButton.addEventListener("click", setTime);
     function setTime() {
         var timerInterval = setInterval(function() {
         timeLeft--;
-        timerEl.textContent = "Timer: " + timeLeft;
+        timerEl.textContent = timeLeft;
         
             if(timeLeft === 0) {
             clearInterval(timerInterval);
-            sendMessage();
+            // sendMessage();
             }
         }, 1000);
     }
 
 //Need to start after button click
-//add event listener?? Toggle??
+function toggleMessage(show){
+    if(show) {
+        defaultEl.classList.remove("hidden");
+    }else{
+        defaultEl.classList.add("hidden");
+    }
+      
+ }
 
-quizEl = [
+let currentIndex = 0;
+
+let quizAnswer = [
     {
       question: "Who invented JavaScript?",
-      answers: {
+      answers: [
         a: "Douglas Crockford",
         b: "Sheryl Sandberg",
         c: "Brendan Eich"
-      },
+      ]
       correctAnswer: "c"
     },
 
-    /*additional questions
     {
       question: "Which one of these is a JavaScript package manager?",
-      answers: {
+      answers: [
         a: "Node.js",
         b: "TypeScript",
         c: "npm"
-      },
+      ] 
       correctAnswer: "c"
     },
+        /*additional questions
     {
       question: "Which tool can you use to ensure code quality?",
       answers: {
@@ -61,13 +73,19 @@ quizEl = [
 
   ];
 
+  quizAnswer[currentIndex];
+  function startQuiz(){
+
+    
+
+
+
+  }
+
+
+
     //Sample Quiz Questions - should appear after button start quiz click.
     //multiple choice need to have event listener
-    document.getElementById("startButton")
-            .addEventListener("click", function() {
-    document.getElementById("quizEl").hidden = true;
-    document.getElementById("quizEl").hidden = false;
-    }, false);
 
 
   //recording score

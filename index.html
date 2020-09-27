@@ -18,7 +18,7 @@
    
     <main>
 
-        <div class= container id="quizDirection">
+        <div class= container id="default">
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                 <h5 class="card-title">Quiz Challenge</h5>
@@ -28,9 +28,35 @@
             </div>
         </div>
 
-        <div class="container" id="quiz">
+        <div class="container hidden" id="quizContainer">
+            <div id="quizOne">
+                <p>"Who invented JavaScript?"</p>
+                <ul>
+                    <li>a: Douglas Crockford</li>
+                    <li>b: Sheryl Sandberg</li>
+                    <li>c: Brendan Eich</li>
+                </ul>
+            </div>
+            <div id="quizTwo">
+                <p>"Which one of these is a JavaScript package manager?"</p>
+                <ul>
+                    <li>a: Douglas Crockford</li>
+                    <li>b: Sheryl Sandberg</li>
+                    <li>c: Brendan Eich</li>
+                </ul>
+            </div>
+
+           <div id = "resultMsg"></div>
+        </div>
+
+        <div class="container hidden" id="saveScore">
            
         </div>
+
+        <div class="container hidden" id="highScores">
+           
+        </div>
+
 
     </main>
    
