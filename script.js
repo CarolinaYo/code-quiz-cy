@@ -17,11 +17,13 @@ var timeLeft = 10;
         timeLeft--;
         timerEl.textContent = timeLeft;
         
-        if(timeLeft < 0) {
+        if(timeLeft === -1) {
+
+        timerEl.textContent = 0;
         alert("You have run out of time!");
         clearInterval(timerInterval);
-
         }
+        
     }, 1000);
 }
 
