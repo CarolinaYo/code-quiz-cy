@@ -1,17 +1,14 @@
 var timerEl = document.querySelector("#timer");
-var defaultEl = document.querySelector("#default");
+var defaultEl = document.querySelector(".default-container");
 
 var startButton = document.querySelector(".start-button");
 
 var quizEl = document.querySelector("#quizContainer");
-
+var quizQuestion = document.querySelector("#quizQuestion");
 var resultMessage = document.querySelector("#resultMsg");
 
 var highScoreEl = document.querySelector("#highScores");
 var saveScoreEl = document.querySelector("#saveScores");
-
-//My timer ----- start on button "Start" click
-// after click- hide button and direction to start quizz
 
 
 var timeLeft = 10;
@@ -29,7 +26,8 @@ var timeLeft = 10;
 }
 
 //Need to start after button click
-let show;
+//hidden not working
+
 function toggleMessage(show){
     if(show) {
         defaultEl.classList.remove("hidden");
@@ -39,13 +37,10 @@ function toggleMessage(show){
 
  } 
 
-
-
   function initialize(){
     startButton.addEventListener("click", function(){
         toggleMessage(false);
         setTime();
-        
         startQuiz();
 
     });
@@ -83,11 +78,12 @@ let quizSet = [
 
   function startQuiz(){
 
-    let quizQuestion = document.querySelector("#quizQuestion");
+ 
+    let question = document.querySelector("#question");
     let div = document.createElement("div");
 
     div.textContent = quizSet[currentIndex].question;
-    quizQuestion.appendChild(div);
+    question.appendChild(div);
     
     
     let quizAnswers = document.querySelector("#quizAnswers");
