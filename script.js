@@ -4,10 +4,11 @@ var defaultEl = document.querySelector("#default");
 var startButton = document.querySelector(".start-button");
 
 var quizEl = document.querySelector("#quizContainer");
+
 var resultMessage = document.querySelector("#resultMsg");
 
-var highscoreEl = document.querySelector("#highScores");
-var highscoreEl = document.querySelector("#saveScores");
+var highScoreEl = document.querySelector("#highScores");
+var saveScoreEl = document.querySelector("#saveScores");
 
 //My timer ----- start on button "Start" click
 // after click- hide button and direction to start quizz
@@ -19,31 +20,33 @@ var timeLeft = 10;
         timeLeft--;
         timerEl.textContent = timeLeft;
         
-        if(timeLeft === 0) {
+        if(timeLeft < 0) {
+        alert("You have run out of time!");
         clearInterval(timerInterval);
-        // sendMessage();
+
         }
     }, 1000);
 }
 
 //Need to start after button click
+let show;
 function toggleMessage(show){
     if(show) {
         defaultEl.classList.remove("hidden");
     }else{
         defaultEl.classList.add("hidden");
     }
-      
- }
+
+ } 
+
+
 
   function initialize(){
     startButton.addEventListener("click", function(){
         toggleMessage(false);
-        
         setTime();
         
-
-        // startQuiz();
+        startQuiz();
 
     });
   }  
@@ -52,44 +55,70 @@ function toggleMessage(show){
 
 let currentIndex = 0;
 
-let quizAnswer = [
+let quizSet = [
     {
       question: "Who invented JavaScript?",
       answers: [
-         "Douglas Crockford",
-         "Sheryl Sandberg",
-         "Brendan Eich",
+         "a. Douglas Crockford",
+         "b. Sheryl Sandberg",
+         "c. Brendan Eich",
       ],
-      correctAnswer: "Brendan Eich"
+      correctAnswer: "c. Brendan Eich"
     },
 
     {
       question: "Which one of these is a JavaScript package manager?",
       answers: [
-         "Node.js",
-         "TypeScript",
-         "npm",
+         "a. Node.js",
+         "b. TypeScript",
+         "c. npm",
       ],
-        correctAnswer: "npm"
+        correctAnswer: "c. npm"
     },
-        /*additional questions
-    {
-      question: "Which tool can you use to ensure code quality?",
-      answers: {
-         "Angular",
-         "jQuery",
-         "RequireJS",
-         "ESLint",
-      },
-      correctAnswer: "ESLint"
-    }
-    */
-
+     
   ];
 
 
-  quizAnswer[currentIndex];
+  quizSet[currentIndex];
+
   function startQuiz(){
+
+    let quizQuestion = document.querySelector("#quizQuestion");
+    let div = document.createElement("div");
+
+    div.textContent = quizSet[currentIndex].question;
+    quizQuestion.appendChild(div);
+    
+    
+    let quizAnswers = document.querySelector("#quizAnswers");
+    
+    let li;
+    for (let i = 0; i < quizSet[currentIndex].answers.length; i++) {
+        li = document.createElement("li");
+        li.textContent = quizSet[currentIndex].answers[i];
+        quizAnswers.appendChild(li);
+     }
+
+    // quizAnswers.addEventListener("click");
+        
+        // if (e.target.li === correctAnswer) {
+        //     resultMessage = "Correct!";
+           
+        // }else{
+        //     resultMessage = "Incorrect!";
+        //     timeLeft = timeLeft - 5;
+        // }
+
+    // });
+
+//  function startQuiz(show){
+//     if(show) {
+//         quizEl.classList.remove("hidden");
+//     }else{
+//         quizEl.classList.add("hidden");
+//     }
+      
+//  }
 
     currentIndex++;
   }
@@ -99,11 +128,12 @@ let quizAnswer = [
 
 
 
-//   //recording score
+  //recording score
 //   localStorage.setItem('score', 'highscore');
 
-//   //retirieve score and post to Highscore
+  //retirieve score and post to Highscore
 //   let scoreHistory = localStorage.getItem('highscore');
 
-//   //clear score
-//   localStorage.clear()
+  //clear score
+//   localStorage.clear
+// 

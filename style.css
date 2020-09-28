@@ -1,8 +1,8 @@
-.hideden {
+.hidden {
 display: none;
 }
 
 .container {
-    padding-left = 40px;
+    margin-top: 40px;
 
 }
