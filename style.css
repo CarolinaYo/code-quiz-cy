@@ -1,3 +1,9 @@
 .hidden {
 display: none;
 }
+
+ul li {
+    cursor: pointer;
+    position: relative;
+    background: rgb(191, 87, 201);
+}

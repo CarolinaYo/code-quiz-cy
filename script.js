@@ -54,23 +54,23 @@ let currentIndex = 0;
 
 let quizSet = [
     {
-      question: "Who invented JavaScript?",
+      question: "JavaScript file has an extension of?",
       answers: [
-         "a. Douglas Crockford",
-         "b. Sheryl Sandberg",
-         "c. Brendan Eich",
+         "a. .Java",
+         "b. .js",
+         "c. .javascript",
       ],
-      correctAnswer: "c. Brendan Eich"
+      correctAnswer: 1
     },
 
     {
-      question: "Which one of these is a JavaScript package manager?",
+      question: "Which fuction is used to parse a string into integer?",
       answers: [
-         "a. Node.js",
-         "b. TypeScript",
-         "c. npm",
+         "a. Parse",
+         "b. Int.Parse",
+         "c. None",
       ],
-        correctAnswer: "c. npm"
+        correctAnswer: 3
     },
      
   ];
@@ -89,39 +89,52 @@ let quizSet = [
     
     
     let quizAnswers = document.querySelector("#quizAnswers");
-    
+
+    let score;
+    let newScore;
+
     let li;
+    
     for (let i = 0; i < quizSet[currentIndex].answers.length; i++) {
         li = document.createElement("li");
         li.textContent = quizSet[currentIndex].answers[i];
         quizAnswers.appendChild(li);
+        
+        let line = document.querySelector("#line");
+        let messageEl = document.querySelector("#message")
+        
+        quizAnswers.addEventListener("click", function(e){
+              
+              if (e.target.li === quizSet[correctAnswer]) {
+                let hr = document.createElement("hr");
+                line.appendChild(hr);
+                let resultMsg = document.createElement("p");
+                resultMsg.textContent = "Correct!";
+                messageEl.appendChild(resultMsg);
+                score = score + 10;
+                newScore = score;
+                 
+              }else{
+                let hr = document.createElement("hr");
+                line.appendChild(hr);
+                let resultMsg = document.createElement("p");
+                resultMsg.textContent = "Incorrect!";
+                messageEl.appendChild(resultMsg);
+                timeLeft = timeLeft - 5;
+                
+              }
+      
+      
+          })
+
      }
 
-    // quizAnswers.addEventListener("click");
-        
-        // if (e.target.li === correctAnswer) {
-        //     resultMessage = "Correct!";
-           
-        // }else{
-        //     resultMessage = "Incorrect!";
-        //     timeLeft = timeLeft - 5;
-        // }
 
-    // });
 
-//  function startQuiz(show){
-//     if(show) {
-//         quizEl.classList.remove("hidden");
-//     }else{
-//         quizEl.classList.add("hidden");
-//     }
-      
-//  }
+     currentIndex++;
 
-    currentIndex++;
+     
   }
-
-
 
 
 
