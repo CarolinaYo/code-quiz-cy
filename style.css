@@ -4,6 +4,14 @@ display: none;
 
 li {
     cursor: pointer;
-    /* display: block;
-    background: rgb(191, 87, 201); */
+    display: block;
+    background: rgb(191, 87, 201); 
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+#question{
+    margin-bottom: 5px;
+    /* margin-left:10px; */
+    
 }
