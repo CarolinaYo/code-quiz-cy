@@ -1,5 +1,5 @@
 var timerEl = document.querySelector("#timer");
-var defaultEl = document.querySelector(".default-container");
+var startEl = document.querySelector(".content");
 
 var startButton = document.querySelector(".start-button");
 
@@ -11,7 +11,7 @@ var highScoreEl = document.querySelector("#highScores");
 var saveScoreEl = document.querySelector("#saveScores");
 
 
-var timeLeft = 10;
+var timeLeft = 20;
     function setTime() {
         var timerInterval = setInterval(function() {
         timeLeft--;
@@ -24,17 +24,16 @@ var timeLeft = 10;
         clearInterval(timerInterval);
         }
         
-    }, 1000);
-}
+      }, 1000);
+    }
 
-//Need to start after button click
 //hidden not working
 
 function toggleMessage(show){
     if(show) {
-        defaultEl.classList.remove("hidden");
+      startEl.classList.remove("hidden");
     }else{
-        defaultEl.classList.add("hidden");
+      startEl.classList.add("hidden");
     }
 
  } 
@@ -60,7 +59,7 @@ let quizSet = [
          "b. .js",
          "c. .javascript",
       ],
-      correctAnswer: 1
+      correctAnswer: "b. .js"
     },
 
     {
@@ -70,7 +69,7 @@ let quizSet = [
          "b. Int.Parse",
          "c. None",
       ],
-        correctAnswer: 3
+      correctAnswer: "c. None"
     },
      
   ];
@@ -94,34 +93,36 @@ let quizSet = [
     let newScore;
 
     let li;
-    
+    let line = document.querySelector("#line");
+    let hr = document.createElement("hr");
+    let messageEl = document.querySelector("#message")
+    let resultMsg = document.createElement("p");
+
     for (let i = 0; i < quizSet[currentIndex].answers.length; i++) {
         li = document.createElement("li");
         li.textContent = quizSet[currentIndex].answers[i];
         quizAnswers.appendChild(li);
         
-        let line = document.querySelector("#line");
-        let messageEl = document.querySelector("#message")
-        
-        quizAnswers.addEventListener("click", function(e){
-              
-              if (e.target.li === quizSet[correctAnswer]) {
-                let hr = document.createElement("hr");
+
+        quizAnswers.addEventListener("click", function(){
+
+
+              if (quizAnswers != correctAnswer) {
+               
                 line.appendChild(hr);
-                let resultMsg = document.createElement("p");
-                resultMsg.textContent = "Correct!";
-                messageEl.appendChild(resultMsg);
-                score = score + 10;
-                newScore = score;
-                 
-              }else{
-                let hr = document.createElement("hr");
-                line.appendChild(hr);
-                let resultMsg = document.createElement("p");
+               
+                
                 resultMsg.textContent = "Incorrect!";
                 messageEl.appendChild(resultMsg);
-                timeLeft = timeLeft - 5;
-                
+                timeLeft = timeLeft - 10;
+                 
+              }else{
+              
+                line.appendChild(hr);
+                resultMsg.textContent = "Correct!";
+                messageEl.appendChild(resultMsg);
+                score = score + 1;
+                newScore = score;
               }
       
       

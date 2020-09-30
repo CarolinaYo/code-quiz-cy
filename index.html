@@ -5,37 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" type="text" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 
 <body>
     <header>
         <nav class="navbar navbar-light bg-light">
             <a class="navbar-brand" href="score.html">View Highscore</a>
-            <div>Timer: <span id="timer">10</div></span>
+            <div>Timer: <span id="timer">20</div></span>
         </nav>
     </header>
    
     <main>
-        <div class= "default-container">
-            <div class= "container" id = "default">
+        <div class= "main-container">
+            <div class= "container">
             
                 <div class="card" style="width: 18rem;">
-                    <div class="card-body">
+                    <div class="card-body content" id = "startPage">
                     <h5 class="card-title">Quiz Challenge</h5>
-                    <p class="card-text">Answer the folowing questions within the given time.Incorrect answer will deduct 10 seconds from the timer</p>
+                    <p class="card-text">Answer the folowing questions within the given time. Incorrect answer will deduct 10 seconds from the timer.</p>
                     <button type ="button" class="start-button">Start Quiz</button>
-                    </div>
+                 
                 </div>
-                
-            </div>
-    
-
-        </div>
-        
-       <div class="container hidden" id="quizContainer">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
+   
+                <div class="card-body content" id="quizContainer">
                     
                     <div id="quizQuestion">  
                         <div id="question"></div>            
@@ -43,13 +36,13 @@
                     </div>
                   
                         
-                <div id = "resultMsg"></div>
-                <div id="line"></div>
-                <div id="message"></div>
+                    <div id = "resultMsg"></div>
+                    <div id="line"></div>
+                    <div id="message"></div>
                 </div>
-            </div>           
+                 </div>
+            </div>
         </div>
-   
 
         <div class="container hidden" id="saveScore">
            

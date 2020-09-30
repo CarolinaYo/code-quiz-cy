@@ -2,8 +2,8 @@
 display: none;
 }
 
-ul li {
+li {
     cursor: pointer;
-    position: relative;
-    background: rgb(191, 87, 201);
+    /* display: block;
+    background: rgb(191, 87, 201); */
 }
