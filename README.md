@@ -22,4 +22,4 @@ Coming from a non-coder background, this is the most challenging one to construc
 ## MAINTAINER 
 This is an individual assignment created by Carolina Yoedhana.
 * Github Link: https://github.com/CarolinaYo/code-quiz-cy.git
-* Gitpage Link: 
+* Gitpage Link:  https://carolinayo.github.io/code-quiz-cy/
