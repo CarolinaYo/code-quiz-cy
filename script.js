@@ -20,8 +20,10 @@ function setTime() {
       timerEl.textContent = 0;
       alert("You have run out of time!");
       clearInterval(timerInterval);
+      
     }
   }, 1000);
+  
 }
 
 //hidden not working
@@ -70,37 +72,30 @@ function startQuiz() {
 
   let quizAnswers = document.querySelector("#quizAnswers");
 
-  let score;
-  let newScore;
+  
 
   let li;
-  let line = document.querySelector("#line");
-  let hr = document.createElement("hr");
-  let messageEl = document.querySelector("#message");
-  let resultMsg = document.createElement("p");
+  
 
   for (let i = 0; i < quizSet[currentIndex].answers.length; i++) {
     li = document.createElement("li");
     li.textContent = quizSet[currentIndex].answers[i];
     quizAnswers.appendChild(li);
 
-    quizAnswers.addEventListener("click", function () {
-      if (quizAnswers != correctAnswer) {
-        line.appendChild(hr);
-
-        resultMsg.textContent = "Incorrect!";
-        messageEl.appendChild(resultMsg);
-        timeLeft = timeLeft - 10;
-      } else {
-        line.appendChild(hr);
-        resultMsg.textContent = "Correct!";
-        messageEl.appendChild(resultMsg);
-        score = score + 1;
-        newScore = score;
-      }
-    });
   }
 
+  let line = document.querySelector("#line");
+  let hr = document.createElement("hr");
+  let messageEl = document.querySelector("#message");
+  let resultMsg = document.createElement("p");
+  let score;
+  let newScore;
+  
+    quizAnswers.addEventListener("click", function () {
+      alert("click works");
+
+     
+    });
   currentIndex++;
 }
 
