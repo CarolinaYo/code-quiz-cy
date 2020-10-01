@@ -17,7 +17,7 @@ Language used:
 Application is not working at the moment.
 
 ## CHALLENGES
-Coming from a non-coder background, this is the most challenging one to construct.  It is not to disrespect the assigment, but the progress made with this assignment does not measure up with the amount of time spent churning the work.  The obstacles and hoops are not knowing how to apply proper tools known so far.  
+Code is currently not running in full function.  
 
 ## MAINTAINER 
 This is an individual assignment created by Carolina Yoedhana.
