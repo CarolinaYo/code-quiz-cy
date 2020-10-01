@@ -14,7 +14,26 @@ Language used:
 * JavaScript
 
 ## STEPS
-Application is not working at the moment.
+
+### 1. User is presented with a start page that has a link to a highscore page and a timer that count down the aloted time to complete the quiz.
+* Usert must click the Start Quiz button to proceed. ![window start page](/Assets/startPage.PNG)
+
+### 2. Quiz quesions and multiple choice option will be presented.
+User can click on multiple choice option to select an asnwer.
+* ![window start page](/Assets/quizPage.PNG)
+
+* Correct answer will be presented with a "Correct" message.
+* Incorrect answer will be presented with an "Incorrect" message.
+* The next quiz question will be presented.
+
+### 3. If user runs out of time, a message will be diplayed.
+* ![window start page](/Assets/timeout.PNG)
+
+### 4. If user made it to the end of quiz, a score will be displayed and user can submit initials to record their score.
+
+### 5. At end of process, high score page, options to return to the start of quiz and clearing score will be displayed. 
+
+
 
 ## CHALLENGES
 Code is currently not running in full function.  
