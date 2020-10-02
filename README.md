@@ -19,7 +19,7 @@ Language used:
 * Usert must click the Start Quiz button to proceed. ![window start page](/Assets/startPage.PNG)
 
 ### 2. Quiz quesions and multiple choice option will be presented.
-User can click on multiple choice option to select an asnwer.
+User can click on multiple choice option to select an answer.
 * ![window start page](/Assets/quizPage.PNG)
 
 * Correct answer will be presented with a "Correct" message.
