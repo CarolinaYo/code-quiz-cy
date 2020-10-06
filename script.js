@@ -20,13 +20,9 @@ function setTime() {
       timerEl.textContent = 0;
       alert("You have run out of time!");
       clearInterval(timerInterval);
-      
     }
   }, 1000);
-  
 }
-
-//hidden not working
 
 function toggleMessage(show) {
   if (show) {
@@ -40,7 +36,7 @@ function initialize() {
   startButton.addEventListener("click", function () {
     toggleMessage(false);
     setTime();
-    startQuiz();
+    showQuiz();
   });
 }
 initialize();
@@ -63,7 +59,7 @@ let quizSet = [
 
 quizSet[currentIndex];
 
-function startQuiz() {
+function showQuiz() {
   let question = document.querySelector("#question");
   let div = document.createElement("div");
 
@@ -72,30 +68,46 @@ function startQuiz() {
 
   let quizAnswers = document.querySelector("#quizAnswers");
 
-  
-
   let li;
-  
 
   for (let i = 0; i < quizSet[currentIndex].answers.length; i++) {
     li = document.createElement("li");
     li.textContent = quizSet[currentIndex].answers[i];
-    quizAnswers.appendChild(li);
+//error message -- li.dataset is nont a function
+    li.dataset.correctAnswer =
+      quizSet[currentIndex].answers[i] === quizSet[currentIndex].correctAnswer;
 
+    li.addEventListener("click", function (event) {
+      // alert("click works");
+      let isCorrectAnswer = event.target.dataset.correctAnswer;
+
+      let line = document.querySelector("#line");
+      let hr = document.createElement("hr");
+      let messageEl = document.querySelector("#message");
+      let resultMsg = document.createElement("p");
+      line.appendChild(hr);
+      messageEl.appendChild(resultMsg);
+
+      let correctMessage = document.createTextNode("Correct!");
+      let incorrectMessage = document.createTextNode("Incorrect!");
+
+      let currentScore = 0;
+
+      if (isCorrectAnswer) {
+        currentScore += 5;
+        resultMsg.appendChild(correctMessage);
+
+      } else {
+        timeLeft = timeLeft - 5;
+        resultMsg.appendChild(incorrectMessage);
+      }
+     //need to hide current quiz --- which is at quizSet[currentIndex];
+      showQuiz();
+    });
+
+    quizAnswers.appendChild(li);
   }
 
-  let line = document.querySelector("#line");
-  let hr = document.createElement("hr");
-  let messageEl = document.querySelector("#message");
-  let resultMsg = document.createElement("p");
-  let score;
-  let newScore;
-  
-    quizAnswers.addEventListener("click", function () {
-      alert("click works");
-
-     
-    });
   currentIndex++;
 }
 
