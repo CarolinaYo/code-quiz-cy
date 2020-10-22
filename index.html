@@ -43,13 +43,37 @@
                  </div>
             </div>
         </div>
+<!-- need class=hidden added back -->
+        <div class="container" id="saveScore">
+           <!-- //need game over section, display score, and enter initial with submit button -->
+            <h3 id="endMessage">Quiz Completed.</h3>
+            <p>Your final score: <span id="finalScore"></span></p>
+            <form class="form-inline">
+                <div class="form-group mb-2">
+                  <label for="initials" class="sr-only">Initials</label>
+                  <input type="text" readonly class="form-control-plaintext" id="initials" value="Enter Initials">
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                  <label for="initialInput" class="sr-only">Password</label>
+                  <input type="text" class="form-control form-control-sm" id="initialInput" placeholder="Initials">
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">Submit</button>
 
-        <div class="container hidden" id="saveScore">
-           
+              </form>
         </div>
 
-        <div class="container hidden" id="highScores">
-           
+        <div class="container" id="highScores">
+            <h2>Highscores</h2>
+            <div class="finalPage" id="finalChoice">
+                <div class="displayScores">
+                    <button type="button" class= "btn-sm  goBack">Go Back</button>
+                    <button type="button" class= "btn-sm clearScores">Clear Highscores</button>
+
+
+                </div>
+
+            </div>
+           <!-- display high score with saved score, buttoon to go back adn clear highscore -->
         </div>
 
 
