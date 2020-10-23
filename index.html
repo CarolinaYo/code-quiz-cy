@@ -21,7 +21,7 @@
             <div class= "container">
             
                 <div class="card" style="width: 18rem;">
-                    <div class="card-body content" id = "startPage">
+                    <div class="card-body content toggle" id = "startPage">
                     <h5 class="card-title">Quiz Challenge</h5>
                     <p class="card-text">Answer the folowing questions within the given time. Incorrect answer will deduct 10 seconds from the timer.</p>
                     <button type ="button" class="start-button">Start Quiz</button>
@@ -44,36 +44,41 @@
             </div>
         </div>
 <!-- need class=hidden added back -->
-        <div class="container" id="saveScore">
-           <!-- //need game over section, display score, and enter initial with submit button -->
+<!-- End of Quiz -->
+<!-- displaying current scores -->
+        <div class="container toggle hidden" id="endOfQuiz">
             <h3 id="endMessage">Quiz Completed.</h3>
-            <p>Your final score: <span id="finalScore"></span></p>
+            <p>Your final score: <span id="currentScore"></span></p>
             <form class="form-inline">
                 <div class="form-group mb-2">
                   <label for="initials" class="sr-only">Initials</label>
-                  <input type="text" readonly class="form-control-plaintext" id="initials" value="Enter Initials">
+                  <input type="text" readonly class="form-control-plaintext" value="Enter Initials">
                 </div>
+
                 <div class="form-group mx-sm-3 mb-2">
                   <label for="initialInput" class="sr-only">Password</label>
-                  <input type="text" class="form-control form-control-sm" id="initialInput" placeholder="Initials">
+                  <input type="text" class="form-control form-control-sm"  id="initials" placeholder="Initials">
                 </div>
-                <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                <button type="submit" class="btn btn-primary mb-2" id="saveScore">Submit</button>
 
               </form>
         </div>
+     <!-- display high score with saved score, buttoon to go back adn clear highscore -->
 
-        <div class="container" id="highScores">
+        <div class="container toggle hidden" id="highScores">
             <h2>Highscores</h2>
             <div class="finalPage" id="finalChoice">
                 <div class="displayScores">
-                    <button type="button" class= "btn-sm  goBack">Go Back</button>
-                    <button type="button" class= "btn-sm clearScores">Clear Highscores</button>
-
-
+                    <!-- //need score from script -->
                 </div>
 
+                <button type="button" class= "btn-sm" id="returnToQuiz">Go Back</button>
+                
+                <button type="button" class= "btn-sm" id="clearScores">Clear Highscores</button>
+
+
+
             </div>
-           <!-- display high score with saved score, buttoon to go back adn clear highscore -->
         </div>
 
 
