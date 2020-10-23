@@ -1,5 +1,5 @@
 var timerEl = document.querySelector("#timer");
-var startEl = document.querySelector(".content");
+var startEl = document.querySelector(".toggle");
 
 var startButton = document.querySelector(".start-button");
 
@@ -7,8 +7,15 @@ var quizEl = document.querySelector("#quizContainer");
 var quizQuestion = document.querySelector("#quizQuestion");
 var resultMessage = document.querySelector("#resultMsg");
 
+var saveScoreEl = document.querySelector("#endOfQuiz");
+var initialsEl = document.querySelector("#initials");
+var currentScoreEl = document.querySelector("#currentScore");
+var saveScoreEl = document.querySelector("#saveScore");
+
 var highScoreEl = document.querySelector("#highScores");
-var saveScoreEl = document.querySelector("#saveScores");
+var displayScoresEl = document.querySelector(".displayScores");
+var returnToQuizEl = document.querySelector("#returnToQuiz");
+var clearScoreEl = document.querySelector("#clearScores");
 
 var timeLeft = 20;
 function setTime() {
@@ -47,17 +54,18 @@ let quizSet = [
   {
     question: "JavaScript file has an extension of?",
     answers: ["a. .Java", "b. .js", "c. .javascript"],
-    correctAnswer: "b. .js",
+    correctAnswer: "b. .js"
   },
 
   {
     question: "Which fuction is used to parse a string into integer?",
     answers: ["a. Parse", "b. Int.Parse", "c. None"],
-    correctAnswer: "c. None",
+    correctAnswer: "c. None"
   },
 ];
 
 quizSet[currentIndex];
+let currentScore = 0;
 
 function showQuiz() {
   let question = document.querySelector("#question");
@@ -73,7 +81,7 @@ function showQuiz() {
   for (let i = 0; i < quizSet[currentIndex].answers.length; i++) {
     li = document.createElement("li");
     li.textContent = quizSet[currentIndex].answers[i];
-//error message -- li.dataset is nont a function
+    //error message -- 
     li.dataset.correctAnswer =
       quizSet[currentIndex].answers[i] === quizSet[currentIndex].correctAnswer;
 
@@ -91,8 +99,7 @@ function showQuiz() {
       let correctMessage = document.createTextNode("Correct!");
       let incorrectMessage = document.createTextNode("Incorrect!");
 
-      let currentScore = 0;
-
+      
       if (isCorrectAnswer) {
         currentScore += 5;
         resultMsg.appendChild(correctMessage);
@@ -102,7 +109,8 @@ function showQuiz() {
         resultMsg.appendChild(incorrectMessage);
       }
      //need to hide current quiz --- which is at quizSet[currentIndex];
-      showQuiz();
+     //need time delay;
+     showQuiz();
     });
 
     quizAnswers.appendChild(li);
@@ -111,11 +119,18 @@ function showQuiz() {
   currentIndex++;
 }
 
+function endOfGame(){
+
+}
+
+function finalPage(){
+
+}
 //recording score
 //   localStorage.setItem('score', 'highscore');
 
 //retirieve score and post to Highscore
-//   let scoreHistory = localStorage.getItem('highscore');
+//   let scoreHistory = localStorage.getItem('score');
 
 //clear score
 //   localStorage.clear
