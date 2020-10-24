@@ -1,6 +1,6 @@
-.hidden {
+/* .hidden {
 display: none;
-}
+} */
 
 .container {
 margin-top: 40px;
@@ -21,10 +21,16 @@ li {
     /* margin-left:10px; */
     
 }
-#goBack{
-background-color: blueviolet;
+.rtnclear{
+    border: none;
+    color: whitesmoke;
+    border-radius: 5px;
+    background: blueviolet;
 }
-#clearScores{
-    background-color: blueviolet;
+/* #clearScores{
+    border: none;
+    color: white;
+    border-radius: 5px;
+    background: blueviolet;
 
-}
+} */
